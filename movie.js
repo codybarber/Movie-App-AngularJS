@@ -16,7 +16,6 @@ var app = angular.module('movieApp', ['ngRoute']);
     $http.get('http://api.themoviedb.org/3/movie/now_playing?api_key=fec8b5ab27b292a68294261bb21b04a5')
       .success(function(data) {
       $scope.movies = data.results;
-      console.log(data);
     });
   });
 
@@ -25,7 +24,5 @@ var app = angular.module('movieApp', ['ngRoute']);
     $http.get('http://api.themoviedb.org/3/movie/' + $routeParams.movieId + '?api_key=fec8b5ab27b292a68294261bb21b04a5')
       .success(function(details) {
         $scope.movie = details;
-        console.log(details)
       });
-      console.log($routeParams.movieId)
   });
