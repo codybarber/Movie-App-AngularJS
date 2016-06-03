@@ -1,16 +1,17 @@
-<h1>{{movie.original_title}}</h1>
+<h1>{{movie.title}}</h1>
 <h3>"{{movie.tagline}}"</h3>
 <div class="container">
-  <img src="http://image.tmdb.org/t/p/w780{{movie.backdrop_path}}" alt="" />
-  <ul style='list-style:none'>
+  <img style="float: right;" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="" />
+  <ul style='list-style:none' style="float: left;">
     <li>{{movie.overview}}</li>
     <br>
     <li>Release Date: {{movie.release_date}}</li>
     <li>Genre: {{movie.genres[0].name}}</li>
     <li>Production Company: {{movie.production_companies[0].name}}</li>
     <li>Budget: ${{movie.budget}}</li>
-    <li><a href="{{movie.homepage}}">{{movie.original_title}} Official Website</a></li>
+    <li><a href="{{movie.homepage}}">{{movie.title}} Official Website</a></li>
     <li><a href=""></a></li>
   </ul>
+  <p><a href="#/"><button type="button" name="button">Back</button></a></p>
 
 </div>

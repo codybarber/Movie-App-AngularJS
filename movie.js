@@ -15,14 +15,14 @@ var app = angular.module('movieApp', ['ngRoute']);
   app.controller('MainController', function($scope, $http) {
     $http.get('http://api.themoviedb.org/3/movie/now_playing?api_key=fec8b5ab27b292a68294261bb21b04a5')
       .success(function(data) {
-      $scope.movies = data.results;
-    });
+        $scope.movies = data.results;
+      });
   });
 
   app.controller('DetailsController', function($scope, $http, $routeParams) {
     $scope.movieId = $routeParams.movieId;
     $http.get('http://api.themoviedb.org/3/movie/' + $routeParams.movieId + '?api_key=fec8b5ab27b292a68294261bb21b04a5')
-      .success(function(details) {
-        $scope.movie = details;
+      .success(function(data) {
+        $scope.movie = data;
       });
   });
